@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  padding: 0 10px;
+  min-height: 100vh;
+  align-items: center;
+  background: #1d003e;
+  justify-content: center;
+}
+
+.qr_box {
+  height: 265px;
+  max-width: 410px;
+  background: #8504ca;
+  border-radius: 10px;
+  border: 3px solid #000000;
+  padding: 20px 25px 0;
+  transition: 0.2s ease;
+}
+
+.qr_box.active {
+  height: 530px;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+header p {
+  margin-top: 5px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.qr_box .form {
+  margin: 20px 0 25px;
+}
+
+.form :where(input, button) {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.1s ease;
+}
+
+.form input {
+  font-size: 18px;
+  padding: 0 17px;
+  border: 1px solid #999;
+}
+
+.form input::placeholder {
+  color: #c2c2c2;
+}
+
+.form button {
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 17px;
+  background: #5b0089;
+}
+
+.form button:hover{
+    color: #797979;
+    background: #360051;
+}
+
+.qr-code {
+  opacity: 0;
+  display: flex;
+  padding: 15px 0;
+  border-radius: 10px;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+}
+
+.qr_box.active .qr-code {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
+}
+
+.qr-code img {
+  width: 240px;
+}
+
+@media (max-width: 430px) {
+  .qr_box {
+    height: 255px;
+    padding: 16px 20px;
+  }
+
+  .qr_box.active {
+    height: 510px;
+  }
+
+  header p {
+    color: #000000;
+  }
+
+  .form :where(input, button) {
+    height: 52px;
+  }
+
+  .qr-code img {
+    width: 220px;
+  }
+}
